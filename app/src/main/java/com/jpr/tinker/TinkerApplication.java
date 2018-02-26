@@ -2,6 +2,7 @@ package com.jpr.tinker;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 
 /**
  * 类描述:
@@ -17,6 +18,7 @@ public class TinkerApplication extends Application {
 
     @Override
     protected void attachBaseContext(Context base) {
+        //每次启动都要去修复
         FixDexUtils.loadFixedDex(base);
         super.attachBaseContext(base);
     }
